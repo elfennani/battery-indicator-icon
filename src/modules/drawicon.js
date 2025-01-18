@@ -358,11 +358,12 @@ export const BatteryDrawIcon = GObject.registerClass(
       const one = h / 16;
       const strokeWidth =
         (plump ? 5.333 : slim ? 2 : verticalBattery ? 2.46 : 4) * one;
-      const cornerRadius = slim
-        ? strokeWidth * 2
-        : plump
-        ? strokeWidth * 0.75
-        : 1.5 * one;
+      // const cornerRadius = slim
+      //   ? strokeWidth * 2
+      //   : plump
+      //   ? strokeWidth * 0.75
+      //   : 1.5 * one;
+      const cornerRadius = h/2;
       // Battery button width and height (vertical: V/horizontal: H)
       const bFrac = plump ? 0.176 : slim ? 0.3 : 0.44;
       const bThickness = plump
@@ -711,7 +712,7 @@ function rectangleButtonPath(
   if (vertical) {
     cr.rectangle((w - bWidthV) / 2, 0, bWidthV, bThickness);
   } else {
-    cr.rectangle(w - bThickness, (h - bHeightH) / 2, bThickness, bHeightH);
+    // cr.rectangle(w - bThickness, (h - bHeightH) / 2, bThickness, bHeightH);
   }
 }
 
